@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="canonical" href="https://scorecount.com/tournament/">
+	<link rel="amphtml" href="https://scorecount.com/tournament/m/d">
+	<title>7th Karate Championship 2023-Kathmandu</title>
+	<meta name="description"
+		content="Your ultimate tiesheet resource for the 7th Karate Championship 2023 in Kathmandu. Stay updated with schedules, results, and competitor information. Join us for an unforgettable display of martial arts skill and sportsmanship.">
+	<meta name="keywords" content="tournament,7th Karate Championship">
+	<meta property="og:title" content="7th Karate Championship 2023-Kathmandu">
+	<meta property="og:type" content="website">
+	<meta property="og:image" content="images/brackets-diagram-maker.png">
+	<meta property="og:description"
+		content="Your ultimate tiesheet resource for the 7th Karate Championship 2023 in Kathmandu. Stay updated with schedules, results, and competitor information. Join us for an unforgettable display of martial arts skill and sportsmanship.">
+	<script src="js/jquery.min.js"></script>
+	<link rel="stylesheet" href="css/jquery-ui.css">
+	<script src="js/jquery-1.12.4.js"></script>
+	<script src="js/jquery-ui.js"></script>
+	<script src="js/script.js"></script>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+
+</head>
+
+<body>
+	<div id="article">
+		<div id="closeArticle" class="helpToggle">
+			×
+		</div>
+		<div id="wrapArticle">
+			<article>
+				<h1>7th Karate Championship 2023-Kathmandu</h1>
+				<p>
+
+					Welcome to the official website of the 7th Karate Championship 2023, taking place in Kathmandu! This
+					website serves as your ultimate tiesheet resource, providing comprehensive information and updates
+					about this highly anticipated martial arts event.
+				</p>
+				<p>
+
+					Our platform is designed to cater to karate enthusiasts, participants, and spectators alike,
+					ensuring a seamless and immersive experience throughout the championship. Stay up to date with the
+					latest news, schedules, and results, allowing you to plan your attendance or follow the action from
+					the comfort of your own home.
+				</p>
+				<p>
+
+					Explore our user-friendly interface, where you can access detailed tiesheets for each category and
+					division, showcasing the competitors' names, nationalities, and the order of their matches. Whether
+					you're a participant seeking your next opponent or a dedicated fan wanting to cheer on your favorite
+					athletes, our tiesheets provide all the essential information you need.
+				</p>
+				<p>
+
+					In addition to tiesheets, our website offers a plethora of useful resources. Discover detailed
+					profiles of the participating karatekas, including their achievements, fighting styles, and previous
+					tournament performances. Watch captivating videos and photo galleries capturing the intense and
+					exhilarating moments of previous championships.
+				</p>
+				<p>
+
+					Engage in lively discussions and connect with fellow karate enthusiasts through our interactive
+					community forums. Share your thoughts, predictions, and experiences, and connect with like-minded
+					individuals from around the world who share your passion for karate.
+				</p>
+				<p>
+
+					For those planning to attend the 7th Karate Championship in person, we provide essential information
+					about the venue, ticketing, accommodation options, and local attractions. Make the most of your
+					visit to Kathmandu by exploring the rich cultural heritage and natural beauty of this vibrant city.
+				</p>
+				<p>
+
+					The 7th Karate Championship 2023 is set to be a thrilling display of skill, determination, and
+					sportsmanship. Whether you're a participant, spectator, or simply a karate enthusiast, this website
+					is your go-to destination for all things tiesheet-related. Join us as we celebrate the art of karate
+					and witness the crowning of champions in Kathmandu!
+				</p>
+
+			</article>
+		</div>
+	</div>
+	<div id="wrapTournament" spellcheck="false" class="show8">
+		<div id="wrapSettings">
+			<a href="/" id="logo">
+				<img src="images/logo.png" alt="Score Count logo" height="100">
+			</a>
+			<div class="row shiftDown">
+				<div class="name">
+					Teams:
+				</div>
+				<div class="input">
+					<div id="teamslider">
+						<div id="teams-handle" class="ui-slider-handle"></div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="button demo" id="demoButtonka" title="Populate the brackets with the 2019 NBA playoffs">Demo
+				</div>
+				<div class="button" id="erase" title="Clear the board: team names and scores">Erase</div>
+				<div class="button" id="erasescore" title="Leave the teams and remove scores">Clear scores</div>
+				<div class="button" id="shuffleTeams" title="Reorder the teams in the first row">Shuffle teams</div>
+				<div class="button saveToggle" id="share">Share</div>
+				<div class="button saveToggle" id="embed">Embed</div>
+				<div class="button helpToggle" id="helpButtonka">Help</div>
+			</div>
+			<div class="row">
+				<div class="checkbox" id="ordered">Ordered</div>
+				<div class="checkbox" id="showvenue">Venue</div>
+				<div class="checkbox" id="showrounds">Rounds</div>
+				<div class="checkbox" id="hlwinner">Highlight winners</div>
+				<div class="checkbox" id="showscore">Score</div>
+				<div class="checkbox" id="autoadvance">Advance winners</div>
+				<div class="checkbox" id="finalwinner">Winner</div>
+				<div class="checkbox" id="toggleTitle">Title</div>
+			</div>
+			<div id="savedLink">
+				<div id="closeSaves" class="saveToggle" title="Close">×</div>
+				Embed code: <input type="text" id="embedCode">
+				 | 
+				Saved to URL: <a href="/" id="shareLink" target="_blank">Link</a>
+			</div>
+		</div>
+		<a href="/" id="smallLogo" target="_self">
+			ScoreCount
+		</a>
+		<a id="menu">
+			≡
+		</a>
+		<input type="text" id="title" value="Championship">
+		<div id="scrollTournament">
+			<div id="tournament">
+				<div class="row1">
+					<div class="first"><input type="text" class="order"></div>
+					<div class="down" data-o="1"><input type="text" class="team"><input type="text" class="score">
+						<div class="venue"><input type="text" class="info"></div>
+					</div>
+					<div class="z10"><span data-t="home2-1">»</span></div>
+					<div class="final"><input type="text"></div>
+				</div>
+				<div class="row2">
+					<div class="first"><input type="text" class="order"></div>
+					<div class="up" data-o="1"><input type="text" class="team"><input type="text" class="score"></div>
+					<div class="z1"><span data-t="home2-1">»</span></div>
+					<div class="s4 down" data-o="1"><input type="text" class="team"><input type="text" class="score">
+						<div class="venue"><input type="text" class="info"></div>
+					</div>
+					<div class="s4 z10"><span data-t="home3-1">»</span></div>
+					<div class="final"><input type="text"></div>
+				</div>
+				<div class="s4 row3">
+					<div class="first"><input type="text" class="order"></div>
+					<div class="down" data-o="2"><input type="text" class="team"><input type="text" class="score">
+						<div class="venue"><input type="text" class="info"></div>
+					</div>
+					<div class="z2"><span data-t="visitor2-1">»</span></div>
+					<div class="up" data-o="1"><input type="text" class="team"><input type="text" class="score"></div>
+					<div class="z6"><span data-t="home3-1">»</span></div>
+				</div>
+				<div class="s4 row4">
+					<div class="first"><input type="text" class="order"></div>
+					<div class="up" data-o="2"><input type="text" class="team"><input type="text" class="score"></div>
+					<div class="z0"><span data-t="visitor2-1">»</span></div>
+					<div></div>
+					<div class="s8 z8"></div>
+					<div class="s8 down" data-o="1"><input type="text" class="team"><input type="text" class="score">
+						<div class="venue"><input type="text" class="info"></div>
+					</div>
+					<div class="s8 z10"><span data-t="home4-1">»</span></div>
+					<div class="final"><input type="text"></div>
+				</div>
+				<div class="s8 row5">
+					<div class="first"><input type="text" class="order"></div>
+					<div class="down" data-o="3"><input type="text" class="team"><input type="text" class="score">
+						<div class="venue"><input type="text" class="info"></div>
+					</div>
+					<div class="z0"><span data-t="home2-2">»</span></div>
+					<div></div>
+					<div class="z9"></div>
+					<div class="up" data-o="1"><input type="text" class="team"><input type="text" class="score"></div>
+					<div class="z6"><span data-t="home4-1">»</span></div>
+				</div>
+				<div class="s8 row6">
+					<div class="first"><input type="text" class="order"></div>
+					<div class="up" data-o="3"><input type="text" class="team"><input type="text" class="score"></div>
+					<div class="z1"><span data-t="home2-2">»</span></div>
+					<div class="down" data-o="2"><input type="text" class="team"><input type="text" class="score">
+						<div class="venue"><input type="text" class="info"></div>
+					</div>
+					<div class="z7"><span data-t="visitor3-1">»</span></div>
+					<div></div>
+					<div class="s16 z5"></div>
+				</div>
+				<div class="s8 row7">
+					<div class="first"><input type="text" class="order"></div>
+					<div class="down" data-o="4"><input type="text" class="team"><input type="text" class="score">
+						<div class="venue"><input type="text" class="info"></div>
+					</div>
+					<div class="z2"><span data-t="visitor2-2">»</span></div>
+					<div class="up" data-o="2"><input type="text" class="team"><input type="text" class="score"></div>
+					<div class="z0"><span data-t="visitor3-1">»</span></div>
+					<div></div>
+					<div class="s16 z5"></div>
+				</div>
+				<div class="s8 row8">
+					<div class="first"><input type="text" class="order"></div>
+					<div class="up" data-o="4"><input type="text" class="team"><input type="text" class="score"></div>
+					<div class="z0"><span data-t="visitor2-2">»</span></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div class="s16 z8"></div>
+					<div class="s16 down" data-o="1"><input type="text" class="team"><input type="text" class="score">
+						<div class="venue"><input type="text" class="info"></div>
+					</div>
+					<div class="s16 z10"><span data-t="home5-1">»</span></div>
+					<div class="final"><input type="text"></div>
+				</div>
+				<div class="s16 row9">
+					<div class="first"><input type="text" class="order"></div>
+					<div class="down" data-o="5"><input type="text" class="team"><input type="text" class="score">
+						<div class="venue"><input type="text" class="info"></div>
+					</div>
+					<div class="z0"><span data-t="home2-3">»</span></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div class="z9"></div>
+					<div class="up" data-o="1"><input type="text" class="team"><input type="text" class="score"></div>
+					<div class="z6"><span data-t="home5-1">»</span></div>
+				</div>
+				<div class="s16 row10">
+					<div class="first"><input type="text" class="order"></div>
+					<div class="up" data-o="5"><input type="text" class="team"><input type="text" class="score"></div>
+					<div class="z1"><span data-t="home2-3">»</span></div>
+					<div class="down" data-o="3"><input type="text" class="team"><input type="text" class="score">
+						<div class="venue"><input type="text" class="info"></div>
+					</div>
+					<div class="z0"><span data-t="home3-2">»</span></div>
+					<div></div>
+					<div class="z5"></div>
+					<div></div>
+					<div class="s32 z5"></div>
+				</div>
+				<div class="s16 row11">
+					<div class="first"><input type="text" class="order"></div>
+					<div class="down" data-o="6"><input type="text" class="team"><input type="text" class="score">
+						<div class="venue"><input type="text" class="info"></div>
+					</div>
+					<div class="z2"><span data-t="visitor2-3">»</span></div>
+					<div class="up" data-o="3"><input type="text" class="team"><input type="text" class="score"></div>
+					<div class="z6"><span data-t="home3-2">»</span></div>
+					<div></div>
+					<div class="z5"></div>
+					<div></div>
+					<div class="s32 z5"></div>
+				</div>
+				<div class="s16 row12">
+					<div class="first"><input type="text" class="order"></div>
+					<div class="up" data-o="6"><input type="text" class="team"><input type="text" class="score"></div>
+					<div class="z0"><span data-t="visitor2-3">»</span></div>
+					<div></div>
+					<div class="z8"></div>
+					<div class="down" data-o="2"><input type="text" class="team"><input type="text" class="score">
+						<div class="venue"><input type="text" class="info"></div>
+					</div>
+					<div class="z7"><span data-t="visitor4-1">»</span></div>
+					<div></div>
+					<div class="s32 z5"></div>
+				</div>
+				<div class="s16 row13">
+					<div class="first"><input type="text" class="order"></div>
+					<div class="down" data-o="7"><input type="text" class="team"><input type="text" class="score">
+						<div class="venue"><input type="text" class="info"></div>
+					</div>
+					<div class="z0"><span data-t="home2-4">»</span></div>
+					<div></div>
+					<div class="z9"></div>
+					<div class="up" data-o="2"><input type="text" class="team"><input type="text" class="score"></div>
+					<div class="z0"><span data-t="visitor4-1">»</span></div>
+					<div></div>
+					<div class="s32 z5"></div>
+				</div>
+				<div class="s16 row14">
+					<div class="first"><input type="text" class="order"></div>
+					<div class="up" data-o="7"><input type="text" class="team"><input type="text" class="score"></div>
+					<div class="z1"><span data-t="home2-4">»</span></div>
+					<div class="down" data-o="4"><input type="text" class="team"><input type="text" class="score">
+						<div class="venue"><input type="text" class="info"></div>
+					</div>
+					<div class="z7"><span data-t="visitor3-2">»</span></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div class="s32 z5"></div>
+				</div>
+				<div class="s16 row15">
+					<div class="first"><input type="text" class="order"></div>
+					<div class="down" data-o="8"><input type="text" class="team"><input type="text" class="score">
+						<div class="venue"><input type="text" class="info"></div>
+					</div>
+					<div class="z2"><span data-t="visitor2-4">»</span></div>
+					<div class="up" data-o="4"><input type="text" class="team"><input type="text" class="score"></div>
+					<div class="z0"><span data-t="visitor3-2">»</span></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div class="s32 z5"></div>
+				</div>
+				<div class="s16 row16">
+					<div class="first"><input type="text" class="order"></div>
+					<div class="up" data-o="8"><input type="text" class="team"><input type="text" class="score"></div>
+					<div class="z0"><span data-t="visitor2-4">»</span></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div class="s32 z8"></div>
+					<div class="s32 down" data-o="1"><input type="text" class="team"><input type="text" class="score">
+						<div class="venue"><input type="text" class="info"></div>
+					</div>
+					<div class="s32 z10"><span data-t="winner15">»</span></div>
+					<div class="s32 final"><input type="text"></div>
+				</div>
+				<div class="s32 row17">
+					<div class="first"><input type="text" class="order"></div>
+					<div class="down" data-o="9"><input type="text" class="team"><input type="text" class="score">
+						<div class="venue"><input type="text" class="info"></div>
+					</div>
+					<div class="z0"><span data-t="home2-5">»</span></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div class="z9"></div>
+					<div class="up" data-o="1"><input type="text" class="team"><input type="text" class="score"></div>
+					<div class="z6"><span data-t="winner15">»</span></div>
+				</div>
+				<div class="s32 row18">
+					<div class="first"><input type="text" class="order"></div>
+					<div class="up" data-o="9"><input type="text" class="team"><input type="text" class="score"></div>
+					<div class="z1"><span data-t="home2-5">»</span></div>
+					<div class="down" data-o="5"><input type="text" class="team"><input type="text" class="score">
+						<div class="venue"><input type="text" class="info"></div>
+					</div>
+					<div class="z0"><span data-t="home3-3">»</span></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div class="z5"></div>
+				</div>
+				<div class="s32 row19">
+					<div class="first"><input type="text" class="order"></div>
+					<div class="down" data-o="10"><input type="text" class="team"><input type="text" class="score">
+						<div class="venue"><input type="text" class="info"></div>
+					</div>
+					<div class="z2"><span data-t="visitor2-5">»</span></div>
+					<div class="up" data-o="5"><input type="text" class="team"><input type="text" class="score"></div>
+					<div class="z6"><span data-t="home3-3">»</span></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div class="z5"></div>
+				</div>
+				<div class="s32 row20">
+					<div class="first"><input type="text" class="order"></div>
+					<div class="up" data-o="10"><input type="text" class="team"><input type="text" class="score"></div>
+					<div class="z0"><span data-t="visitor2-5">»</span></div>
+					<div></div>
+					<div class="z8"></div>
+					<div class="down" data-o="3"><input type="text" class="team"><input type="text" class="score">
+						<div class="venue"><input type="text" class="info"></div>
+					</div>
+					<div class="z0"><span data-t="home4-2">»</span></div>
+					<div></div>
+					<div class="z5"></div>
+				</div>
+				<div class="s32 row21">
+					<div class="first"><input type="text" class="order"></div>
+					<div class="down" data-o="11"><input type="text" class="team"><input type="text" class="score">
+						<div class="venue"><input type="text" class="info"></div>
+					</div>
+					<div class="z0"><span data-t="home2-6">»</span></div>
+					<div></div>
+					<div class="z9"></div>
+					<div class="up" data-o="3"><input type="text" class="team"><input type="text" class="score"></div>
+					<div class="z6"><span data-t="home4-2">»</span></div>
+					<div></div>
+					<div class="z5"></div>
+				</div>
+				<div class="s32 row22">
+					<div class="first"><input type="text" class="order"></div>
+					<div class="up" data-o="11"><input type="text" class="team"><input type="text" class="score"></div>
+					<div class="z1"><span data-t="home2-6">»</span></div>
+					<div class="down" data-o="6"><input type="text" class="team"><input type="text" class="score">
+						<div class="venue"><input type="text" class="info"></div>
+					</div>
+					<div class="z7"><span data-t="visitor3-3">»</span></div>
+					<div></div>
+					<div class="z5"></div>
+					<div></div>
+					<div class="z5"></div>
+				</div>
+				<div class="s32 row23">
+					<div class="first"><input type="text" class="order"></div>
+					<div class="down" data-o="12"><input type="text" class="team"><input type="text" class="score">
+						<div class="venue"><input type="text" class="info"></div>
+					</div>
+					<div class="z2"><span data-t="visitor2-6">»</span></div>
+					<div class="up" data-o="6"><input type="text" class="team"><input type="text" class="score"></div>
+					<div class="z0"><span data-t="visitor3-3">»</span></div>
+					<div></div>
+					<div class="z5"></div>
+					<div></div>
+					<div class="z5"></div>
+				</div>
+				<div class="s32 row24">
+					<div class="first"><input type="text" class="order"></div>
+					<div class="up" data-o="12"><input type="text" class="team"><input type="text" class="score"></div>
+					<div class="z0"><span data-t="visitor2-6">»</span></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div class="z8"></div>
+					<div class="down" data-o="2"><input type="text" class="team"><input type="text" class="score">
+						<div class="venue"><input type="text" class="info"></div>
+					</div>
+					<div class="z7"><span data-t="visitor5-1">»</span></div>
+				</div>
+				<div class="s32 row25">
+					<div class="first"><input type="text" class="order"></div>
+					<div class="down" data-o="13"><input type="text" class="team"><input type="text" class="score">
+						<div class="venue"><input type="text" class="info"></div>
+					</div>
+					<div class="z0"><span data-t="home2-7">»</span></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div class="z9"></div>
+					<div class="up" data-o="2"><input type="text" class="team"><input type="text" class="score"></div>
+					<div class="z0"><span data-t="visitor5-1">»</span></div>
+				</div>
+				<div class="s32 row26">
+					<div class="first"><input type="text" class="order"></div>
+					<div class="up" data-o="13"><input type="text" class="team"><input type="text" class="score"></div>
+					<div class="z1"><span data-t="home2-7">»</span></div>
+					<div class="down" data-o="7"><input type="text" class="team"><input type="text" class="score">
+						<div class="venue"><input type="text" class="info"></div>
+					</div>
+					<div class="z0"><span data-t="home3-4">»</span></div>
+					<div></div>
+					<div class="z5"></div>
+				</div>
+				<div class="s32 row27">
+					<div class="first"><input type="text" class="order"></div>
+					<div class="down" data-o="14"><input type="text" class="team"><input type="text" class="score">
+						<div class="venue"><input type="text" class="info"></div>
+					</div>
+					<div class="z2"><span data-t="visitor2-7">»</span></div>
+					<div class="up" data-o="7"><input type="text" class="team"><input type="text" class="score"></div>
+					<div class="z6"><span data-t="home3-4">»</span></div>
+					<div></div>
+					<div class="z5"></div>
+				</div>
+				<div class="s32 row28">
+					<div class="first"><input type="text" class="order"></div>
+					<div class="up" data-o="14"><input type="text" class="team"><input type="text" class="score"></div>
+					<div class="z6"><span data-t="visitor2-7">»</span></div>
+					<div></div>
+					<div class="z8"></div>
+					<div class="down" data-o="4"><input type="text" class="team"><input type="text" class="score">
+						<div class="venue"><input type="text" class="info"></div>
+					</div>
+					<div class="z7"><span data-t="visitor4-2">»</span></div>
+				</div>
+				<div class="s32 row29">
+					<div class="first"><input type="text" class="order"></div>
+					<div class="down" data-o="15"><input type="text" class="team"><input type="text" class="score">
+						<div class="venue"><input type="text" class="info"></div>
+					</div>
+					<div class="z0"><span data-t="home2-8">»</span></div>
+					<div></div>
+					<div class="z9"></div>
+					<div class="up" data-o="4"><input type="text" class="team"><input type="text" class="score"></div>
+					<div class="z0"><span data-t="visitor4-2">»</span></div>
+				</div>
+				<div class="s32 row30">
+					<div class="first"><input type="text" class="order"></div>
+					<div class="up" data-o="15"><input type="text" class="team"><input type="text" class="score"></div>
+					<div class="z1"><span data-t="home2-8">»</span></div>
+					<div class="down" data-o="8"><input type="text" class="team"><input type="text" class="score">
+						<div class="venue"><input type="text" class="info"></div>
+					</div>
+					<div class="z7"><span data-t="visitor3-4">»</span></div>
+				</div>
+				<div class="s32 row31">
+					<div class="first"><input type="text" class="order"></div>
+					<div class="down" data-o="16"><input type="text" class="team"><input type="text" class="score">
+						<div class="venue"><input type="text" class="info"></div>
+					</div>
+					<div class="z2"><span data-t="visitor2-8">»</span></div>
+					<div class="up" data-o="8"><input type="text" class="team"><input type="text" class="score"></div>
+					<div class="z0"><span data-t="visitor3-4">»</span></div>
+				</div>
+				<div class="s32 row32">
+					<div class="first"><input type="text" class="order"></div>
+					<div class="up" data-o="16"><input type="text" class="team"><input type="text" class="score"></div>
+					<div class="z0"><span data-t="visitor2-8">»</span></div>
+				</div>
+				<div class="rounds">
+					<div class="s32"></div>
+					<div class="s32">16th-finals</div>
+					<div class="s16"></div>
+					<div class="s16">8th-finals</div>
+					<div class="s8"></div>
+					<div class="s8">Quarterfinals</div>
+					<div class="s4"></div>
+					<div class="s4">Semifinals</div>
+					<div class="s4"></div>
+					<div class="s4">Final</div>
+					<div class="s4 winnerLabel"></div>
+					<div class="s4 winnerLabel">Winner</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-199625911-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+
+		gtag('config', 'UA-199625911-1');
+	</script>
+	<div class="adwrap"></div>
+
+</body>
+
+<style>
+
+#tournament > div > div input[class="team"]:nth-child(odd){
+	background-color: rgb(157, 0, 0);
+	color: white;
+}
+#tournament > div > div input:nth-child(2){
+	background-color: black;
+	color: white;
+}
+</style>
+
+</html>

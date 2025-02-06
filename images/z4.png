@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting</title>
+  </head>
+  <body onload="redirect()">
+	<div style="text-align: center;padding-top: 20px;display: block;font-family: Arial;font-weight:bold">
+		<h1 style="font-size: 35px;">Page not found.</h1>
+		<p style="font-size: 25px;">Go back to the <a href="/">Home page &raquo;</a></p>
+		<script>
+		  function redirect() {
+			setTimeout(function(){ 
+					window.location.replace("/");
+				}
+				, 200);	
+			}
+		</script>
+	</div>
+  </body>
+</html>
