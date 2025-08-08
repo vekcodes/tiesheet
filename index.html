@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="canonical" href="https://scorecount.com/tournament/">
 	<link rel="amphtml" href="https://scorecount.com/tournament/m/d">
-	<title>7th Karate Championship 2023-Kathmandu</title>
+	<title>Tiesheet Maker</title>
 	<meta name="description"
 		content="Your ultimate tiesheet resource for the 7th Karate Championship 2023 in Kathmandu. Stay updated with schedules, results, and competitor information. Join us for an unforgettable display of martial arts skill and sportsmanship.">
 	<meta name="keywords" content="tournament,7th Karate Championship">
@@ -23,6 +23,9 @@
 	<script src="js/script.js"></script>
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+	<!-- Print.js library for printing functionality -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/print-js/1.6.0/print.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/print-js/1.6.0/print.min.css">
 
 </head>
 
@@ -35,59 +38,51 @@
 			<article>
 				<h1>7th Karate Championship 2023-Kathmandu</h1>
 				<p>
-
 					Welcome to the official website of the 7th Karate Championship 2023, taking place in Kathmandu! This
 					website serves as your ultimate tiesheet resource, providing comprehensive information and updates
 					about this highly anticipated martial arts event.
 				</p>
 				<p>
-
 					Our platform is designed to cater to karate enthusiasts, participants, and spectators alike,
 					ensuring a seamless and immersive experience throughout the championship. Stay up to date with the
 					latest news, schedules, and results, allowing you to plan your attendance or follow the action from
 					the comfort of your own home.
 				</p>
 				<p>
-
 					Explore our user-friendly interface, where you can access detailed tiesheets for each category and
 					division, showcasing the competitors' names, nationalities, and the order of their matches. Whether
 					you're a participant seeking your next opponent or a dedicated fan wanting to cheer on your favorite
 					athletes, our tiesheets provide all the essential information you need.
 				</p>
 				<p>
-
 					In addition to tiesheets, our website offers a plethora of useful resources. Discover detailed
 					profiles of the participating karatekas, including their achievements, fighting styles, and previous
 					tournament performances. Watch captivating videos and photo galleries capturing the intense and
 					exhilarating moments of previous championships.
 				</p>
 				<p>
-
 					Engage in lively discussions and connect with fellow karate enthusiasts through our interactive
 					community forums. Share your thoughts, predictions, and experiences, and connect with like-minded
 					individuals from around the world who share your passion for karate.
 				</p>
 				<p>
-
 					For those planning to attend the 7th Karate Championship in person, we provide essential information
 					about the venue, ticketing, accommodation options, and local attractions. Make the most of your
 					visit to Kathmandu by exploring the rich cultural heritage and natural beauty of this vibrant city.
 				</p>
 				<p>
-
 					The 7th Karate Championship 2023 is set to be a thrilling display of skill, determination, and
 					sportsmanship. Whether you're a participant, spectator, or simply a karate enthusiast, this website
 					is your go-to destination for all things tiesheet-related. Join us as we celebrate the art of karate
 					and witness the crowning of champions in Kathmandu!
 				</p>
-
 			</article>
 		</div>
 	</div>
 	<div id="wrapTournament" spellcheck="false" class="show8">
 		<div id="wrapSettings">
 			<a href="/" id="logo">
-				<img src="images/logo.png" alt="Score Count logo" height="100">
+				<img id="logoImage" src="images/favicon.png" alt="Score Count logo" height="100">
 			</a>
 			<div class="row shiftDown">
 				<div class="name">
@@ -100,14 +95,13 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="button demo" id="demoButtonka" title="Populate the brackets with the 2019 NBA playoffs">Demo
-				</div>
+				<input type="file" id="logoInput" accept="image/*" style="display: none;">
+				<div class="button" id="uploadLogo">Upload logo</div>
+				<div class="button demo" id="demoButtonka" title="Populate the brackets with the 2019 NBA playoffs">Demo</div>
 				<div class="button" id="erase" title="Clear the board: team names and scores">Erase</div>
 				<div class="button" id="erasescore" title="Leave the teams and remove scores">Clear scores</div>
 				<div class="button" id="shuffleTeams" title="Reorder the teams in the first row">Shuffle teams</div>
-				<div class="button saveToggle" id="share">Share</div>
-				<div class="button saveToggle" id="embed">Embed</div>
-				<div class="button helpToggle" id="helpButtonka">Help</div>
+				<!-- <div class="button" id="printTournament" title="Print the tournament bracket">Print Bracket</div> -->
 			</div>
 			<div class="row">
 				<div class="checkbox" id="ordered">Ordered</div>
@@ -119,11 +113,19 @@
 				<div class="checkbox" id="finalwinner">Winner</div>
 				<div class="checkbox" id="toggleTitle">Title</div>
 			</div>
+			<div class="row">
+				<div class="nav-color-controls">
+					<label for="navColorPicker">Nav Color:</label>
+					<input type="color" id="navColorPicker" value="#ffffff">
+					<label for="textColorPicker">Text Color:</label>
+					<input type="color" id="textColorPicker" value="#000000">
+				</div>
+			</div>
 			<div id="savedLink">
 				<div id="closeSaves" class="saveToggle" title="Close">×</div>
-				Embed code: <input type="text" id="embedCode">
-				 | 
-				Saved to URL: <a href="/" id="shareLink" target="_blank">Link</a>
+				Embed code: <input type="text" id="embedCode">
+				 | 
+				Saved to URL: <a href="/" id="shareLink" target="_blank">Link</a>
 			</div>
 		</div>
 		<a href="/" id="smallLogo" target="_self">
@@ -531,28 +533,402 @@
 			</div>
 		</div>
 	</div>
+
+	<!-- Hidden print container -->
+	<div id="printContainer" style="display: none; padding: 20px; max-width: 768px;">
+		<div id="printHeader" style="display: flex; align-items: center; justify-content: center; gap: 20px;">
+			<img id="printLogo" src="images/favicon.png" alt="Tournament Logo"
+				 style="height: 200px; max-width: 100%; object-fit: contain;">
+			<h1 id="printTitle" style="margin: 0; font-size: 56px; text-align: center;">Championship</h1>
+		</div>
+		<div id="printTournament" style="margin-top: 30px;"></div>
+	</div>
+	
+
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-199625911-1"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
 		function gtag() { dataLayer.push(arguments); }
 		gtag('js', new Date());
-
 		gtag('config', 'UA-199625911-1');
+
+		// In-memory storage for logo (since localStorage not supported in Claude.ai)
+		let tournamentData = {
+			logoUrl: 'images/favicon.png',
+			navColor: '#ffffff',
+			textColor: '#000000',
+			title: 'Championship'
+		};
+
+		// Enhanced functionality
+		$(document).ready(function() {
+			// Load saved data on page load
+			loadSavedData();
+
+			// Logo upload functionality
+			$('#uploadLogo').click(function() {
+				$('#logoInput').click();
+			});
+
+			$('#logoInput').change(function(e) {
+				const file = e.target.files[0];
+				if (file) {
+					const reader = new FileReader();
+					reader.onload = function(e) {
+						const logoUrl = e.target.result;
+						// Update all logo instances
+						updateLogoEverywhere(logoUrl);
+						// Save to memory
+						tournamentData.logoUrl = logoUrl;
+						saveTournamentData();
+					};
+					reader.readAsDataURL(file);
+				}
+			});
+
+			function updateLogoEverywhere(logoUrl) {
+				$('#logoImage').attr('src', logoUrl);
+				$('#printLogo').attr('src', logoUrl);
+				// Update small logo in full screen mode
+				if ($('#smallLogo').find('img').length === 0) {
+					$('#smallLogo').html('<img src="' + logoUrl + '" alt="Tournament Logo" style="height: 150px; vertical-align: middle;">');
+				} else {
+					$('#smallLogo img').attr('src', logoUrl);
+				}
+			}
+
+			// Navigation color controls
+			$('#navColorPicker').change(function() {
+				const navColor = $(this).val();
+				$('#wrapSettings').css('background-color', navColor);
+				tournamentData.navColor = navColor;
+				saveTournamentData();
+			});
+
+			$('#textColorPicker').change(function() {
+				const textColor = $(this).val();
+				$('#wrapSettings').css('color', textColor);
+				$('#wrapSettings .button, #wrapSettings .checkbox, #wrapSettings .name').css('color', textColor);
+				tournamentData.textColor = textColor;
+				saveTournamentData();
+			});
+
+			// Print functionality with better error handling
+			$('#printTournament').click(function() {
+				try {
+					printTournamentBracket();
+				} catch (error) {
+					console.error('Print error:', error);
+					// Fallback to browser's native print
+					printFallback();
+				}
+			});
+
+			// Update print title when main title changes
+			$('#title').on('input', function() {
+				const title = $(this).val();
+				$('#printTitle').text(title);
+				tournamentData.title = title;
+				saveTournamentData();
+			});
+
+			function printTournamentBracket() {
+				// Create a comprehensive print content
+				const tournamentClone = $('#tournament').clone();
+				
+				// Process inputs for printing
+				tournamentClone.find('input').each(function() {
+					const value = $(this).val();
+					const className = $(this).attr('class') || '';
+					let displayValue = value || '___';
+					
+					if (className.includes('team') && !value) {
+						displayValue = '________________';
+					} else if (className.includes('score') && !value) {
+						displayValue = '__';
+					}
+					
+					$(this).replaceWith('<span class="print-text print-' + className + '">' + displayValue + '</span>');
+				});
+
+				$('#printTournament').html(tournamentClone);
+				$('#printTitle').text($('#title').val());
+				$('#printLogo').attr('src', tournamentData.logoUrl);
+				
+				// Enhanced print using window.print with custom CSS
+				const printWindow = window.open('', '_blank', 'width=1200,height=800');
+				const printContent = `
+					<!DOCTYPE html>
+					<html>
+					<head>
+						<title>Tournament Bracket - ${tournamentData.title}</title>
+						<style>
+							body { 
+								font-family: Arial, sans-serif; 
+								margin: 10px; 
+								background: white;
+							}
+							#printHeader { 
+								display: flex; 
+								align-items: center; 
+								margin-bottom: 20px; 
+								border-bottom: 3px solid #000; 
+								padding-bottom: 15px; 
+							}
+							#printLogo { 
+								height: 70px; 
+								margin-right: 20px; 
+							}
+							#printTitle { 
+								font-size: 28px; 
+								font-weight: bold; 
+								flex: 1; 
+								text-align: center; 
+							}
+							.print-text { 
+								display: inline-block; 
+								padding: 3px 6px; 
+								border: 1px solid #333; 
+								margin: 1px; 
+								font-size: 11px; 
+								background: white; 
+								min-width: 60px;
+								text-align: center;
+							}
+							.print-team { 
+								min-width: 120px; 
+								font-weight: bold; 
+							}
+							.print-score { 
+								min-width: 30px; 
+								background: #f0f0f0; 
+							}
+							.print-order { 
+								min-width: 20px; 
+								font-size: 10px; 
+							}
+							#printTournament > div { 
+								display: flex; 
+								align-items: center; 
+								margin: 3px 0; 
+								min-height: 28px; 
+							}
+							#printTournament > div > div { 
+								margin: 0 3px; 
+								display: flex; 
+								align-items: center; 
+							}
+							.z0, .z1, .z2, .z6, .z7, .z8, .z9, .z10 { 
+								font-weight: bold; 
+								font-size: 14px; 
+							}
+							.rounds { 
+								font-weight: bold; 
+								border-top: 2px solid #000; 
+								margin-top: 15px; 
+								padding-top: 8px; 
+								background: #f5f5f5;
+							}
+							@page { 
+								size: landscape; 
+								margin: 0.5in; 
+							}
+							@media print {
+								body { margin: 0; }
+								#printHeader { page-break-after: avoid; }
+							}
+						</style>
+					</head>
+					<body>
+						<div id="printHeader">
+							<img id="printLogo" src="${tournamentData.logoUrl}" alt="Tournament Logo">
+							<h1 id="printTitle">${tournamentData.title}</h1>
+						</div>
+						<div id="printTournament">${tournamentClone.html()}</div>
+					</body>
+					</html>
+				`;
+				
+				printWindow.document.write(printContent);
+				printWindow.document.close();
+				
+				printWindow.onload = function() {
+					printWindow.print();
+					setTimeout(function() {
+						printWindow.close();
+					}, 1000);
+				};
+			}
+
+			function printFallback() {
+				alert('Opening print dialog with browser default settings...');
+				window.print();
+			}
+
+			// Enhanced hamburger menu functionality with logo preservation
+			$('#menu').click(function() {
+				$('#wrapSettings').toggleClass('menu-hidden');
+				if ($('#wrapSettings').hasClass('menu-hidden')) {
+					$('#wrapSettings').hide();
+					$('#wrapTournament').css('padding-left', '0');
+					// Show small logo with current uploaded logo
+					if ($('#smallLogo').find('img').length === 0) {
+						$('#smallLogo').html('<img src="' + tournamentData.logoUrl + '" alt="Tournament Logo" style="height: 30px; vertical-align: middle; margin-right: 5px;"> ScoreCount');
+					}
+				} else {
+					$('#wrapSettings').show();
+					$('#wrapTournament').css('padding-left', '320px');
+					// Restore original text
+					$('#smallLogo').text('ScoreCount');
+				}
+			});
+
+			// Save and load functions
+			function saveTournamentData() {
+				// In a real environment, this would use localStorage:
+				// localStorage.setItem('tournamentData', JSON.stringify(tournamentData));
+				console.log('Tournament data saved:', tournamentData);
+			}
+
+			function loadSavedData() {
+				// In a real environment, this would load from localStorage:
+				// const saved = localStorage.getItem('tournamentData');
+				// if (saved) { tournamentData = JSON.parse(saved); }
+				
+				// Apply saved settings
+				updateLogoEverywhere(tournamentData.logoUrl);
+				$('#navColorPicker').val(tournamentData.navColor);
+				$('#textColorPicker').val(tournamentData.textColor);
+				$('#title').val(tournamentData.title);
+				$('#printTitle').text(tournamentData.title);
+				
+				// Apply colors
+				$('#wrapSettings').css('background-color', tournamentData.navColor);
+				$('#wrapSettings').css('color', tournamentData.textColor);
+				$('#wrapSettings .button, #wrapSettings .checkbox, #wrapSettings .name').css('color', tournamentData.textColor);
+			}
+		});
 	</script>
 	<div class="adwrap"></div>
 
 </body>
 
 <style>
+	#tournament > div > div input[class="team"]:nth-child(odd){
+		background-color: rgb(197, 214, 230);
+		color: black;
+	}
+	#tournament > div > div input:nth-child(2){
+		background-color: black;
+		color: white;
+	}
 
-#tournament > div > div input[class="team"]:nth-child(odd){
-	background-color: rgb(157, 0, 0);
-	color: white;
-}
-#tournament > div > div input:nth-child(2){
-	background-color: black;
-	color: white;
-}
+	/* Enhanced styling for new features */
+	.nav-color-controls {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		padding: 5px;
+	}
+
+	.nav-color-controls label {
+		font-size: 12px;
+		font-weight: bold;
+	}
+
+	.nav-color-controls input[type="color"] {
+		width: 30px;
+		height: 25px;
+		border: none;
+		border-radius: 3px;
+		cursor: pointer;
+	}
+
+	#logoInput {
+		display: none;
+	}
+
+	#uploadLogo {
+		cursor: pointer;
+	}
+
+	#printTournament {
+		cursor: pointer;
+		background-color: #4CAF50;
+		color: white;
+	}
+
+	#printTournament:hover {
+		background-color: #45a049;
+	}
+
+	/* Menu hidden state */
+	.menu-hidden {
+		transform: translateX(-100%);
+		transition: transform 0.3s ease;
+	}
+
+	/* Print-specific styles */
+	@media print {
+		body * {
+			visibility: hidden;
+		}
+		
+		#printContainer, #printContainer * {
+			visibility: visible;
+		}
+		
+		#printContainer {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+		}
+		
+		.print-text {
+			display: inline-block;
+			min-width: 60px;
+			padding: 1px 3px;
+			border: 1px solid #000;
+			margin: 1px;
+			font-size: 10px;
+			background: white;
+		}
+		
+		#printHeader {
+			margin-bottom: 15px;
+			border-bottom: 2px solid #000;
+			padding-bottom: 8px;
+		}
+		
+		#printTitle {
+			font-size: 20px;
+			font-weight: bold;
+			text-align: center;
+		}
+		
+		#printLogo {
+			height: 50px;
+			float: left;
+			margin-right: 10px;
+		}
+	}
+
+	/* Responsive adjustments */
+	@media (max-width: 768px) {
+		.nav-color-controls {
+			flex-wrap: wrap;
+		}
+		
+		.nav-color-controls label {
+			font-size: 10px;
+		}
+		
+		.nav-color-controls input[type="color"] {
+			width: 25px;
+			height: 20px;
+		}
+	}
 </style>
 
 </html>
